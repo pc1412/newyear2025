@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새해 이미지 출력</title>
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="[로켓배송] 새해 특별 배송안내">
+    <meta property="og:description" content="언제나 로켓배송하는 을사로켓배송">
+    <!-- 최소 로고 크기 1200x630px -->
+    <meta property="og:image" content="http://oscc.kr/new2025/wow.png">
+    <meta property="og:type" content="website">
+    
+    <style>
+        /* 로딩 애니메이션 스타일 */
+        #loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 화면 전체 높이 */
+            background-color: #f0f0f0;
+        }
+
+        .spinner {
+            border: 8px solid #e0e0e0;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 이미지 컨테이너 스타일 */
+        #content {
+            display: none; /* 처음에는 숨김 */
+            text-align: center;
+            padding: 20px;
+        }
+
+        #newYearImage {
+            width: 80%; /* 모바일 화면에 맞게 조정 */
+            max-width: 300px; /* 최대 크기 제한 */
+            height: auto;
+            margin-top: 20px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- 로딩 애니메이션 -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- 이미지 컨텐츠 -->
+    <div id="content">
+        <h1>새해 복 많이 받으세요!</h1>
+        <img id="newYearImage" src="new_year_image.jpg" alt="새해 이미지">
+    </div>
+
+    <script>
+        // 3초 후 로딩 화면을 숨기고 컨텐츠 표시
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000);
+    </script>
+</body>
+</html>
